@@ -3,6 +3,7 @@ extends KinematicBody2D
 var grid_size = 16
 
 onready var ray = $RayCast2D
+signal player_move_signal
 
 var inputs = {
 	'ui_up':Vector2.UP,
@@ -22,9 +23,11 @@ func move(dir):
 	ray.force_raycast_update()
 	if !ray.is_colliding():
 		position += vector_pos
+		emit_signal("player_move_signal")
 	else:
 		var collider = ray.get_collider()
 		if collider.is_in_group('box'):
 			if collider.move(dir):
 				position += vector_pos 
+				emit_signal("player_move_signal")
 			
