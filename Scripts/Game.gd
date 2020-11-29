@@ -22,3 +22,7 @@ func _on_AcceptDialog_confirmed():
 
 func _on_Player_player_move_signal():
 	steps += 1 
+
+
+func _on_Player_reset_signal():
+	get_tree().reload_current_scene()

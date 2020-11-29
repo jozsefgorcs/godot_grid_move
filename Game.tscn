@@ -199,4 +199,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="player_move_signal" from="Player" to="." method="_on_Player_player_move_signal"]
+[connection signal="reset_signal" from="Player" to="." method="_on_Player_reset_signal"]
 [connection signal="confirmed" from="AcceptDialog" to="." method="_on_AcceptDialog_confirmed"]
